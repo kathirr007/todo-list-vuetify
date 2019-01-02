@@ -1,5 +1,14 @@
 <template>
   <nav>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="4000"
+      color="success"
+      top
+    >Awesome! You've successfully added a Project goal
+      <v-btn flat color="white" @click.native="snackbar = false">Close</v-btn>
+    </v-snackbar>
+
     <v-toolbar flat app>
       <v-toolbar-side-icon @click="drawer = !drawer" class="grey--text"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase grey--text">
@@ -34,7 +43,7 @@
           <p class="white--text subheading mt-1">Kathirr007</p>
         </v-flex>
         <v-flex class>
-          <Popup/>
+          <Popup @projectAdded="snackbar = true"/>
         </v-flex>
       </v-layout>
       <v-list>
@@ -61,7 +70,8 @@
           { icon: "dashboard", text: "Dashboard", route: "/" },
           { icon: "folder", text: "My Projects", route: "/projects" },
           { icon: "person", text: "Team", route: "/team" }
-        ]
+        ],
+        snackbar: false
       };
     },
     components: {

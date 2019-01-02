@@ -76,6 +76,7 @@
               console.log("Added to DB");
               this.loading = false;
               this.dialog = false;
+              this.$emit("projectAdded");
             });
         }
       }
