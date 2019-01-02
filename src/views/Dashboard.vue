@@ -63,6 +63,22 @@
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!"
           },
           {
+            title: "Plan for new website",
+            person: "Kathirr007",
+            due: "24th March 2019",
+            status: "upcoming",
+            content:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi detates porro molestias non sequi animi!"
+          },
+          {
+            title: "Wireframe for new design",
+            person: "Kathirr007",
+            due: "21st Feb 2019",
+            status: "ongoing",
+            content:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!"
+          },
+          {
             title: "Code up the homepage",
             person: "Chun Li",
             due: "10th Jan 2019",
@@ -97,23 +113,42 @@
   };
 </script>
 
-<style>
-  .project.complete {
-    border-left: 4px solid #3cd1c2;
+<style lang="stylus">
+  .project {
+    border-left: 4px solid;
+
+    &.upcoming {
+      border-left-color: pink;
+    }
+
+    &.ongoing {
+      border-left-color: #ffaa2c;
+    }
+
+    &.overdue {
+      border-left-color: #f83e70;
+    }
+
+    &.complete {
+      border-left-color: #3cd1c2;
+    }
   }
-  .project.ongoing {
-    border-left: 4px solid #ffaa2c;
-  }
-  .project.overdue {
-    border-left: 4px solid #f83e70;
-  }
-  .v-chip.complete {
-    background: #3cd1c2;
-  }
-  .v-chip.ongoing {
-    background: #ffaa2c;
-  }
-  .v-chip.overdue {
-    background: #f83e70;
+
+  .v-chip {
+    &.upcoming {
+      background: pink;
+    }
+
+    &.ongoing {
+      background: #ffaa2c;
+    }
+
+    &.overdue {
+      background: #f83e70;
+    }
+
+    &.complete {
+      background: #3cd1c2;
+    }
   }
 </style>
